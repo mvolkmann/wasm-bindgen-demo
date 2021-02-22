@@ -2,15 +2,17 @@ import init, {
   Color,
   getColor,
   getPowers,
-  greet
-  //sumOfSquareAndCube
+  greet,
+  sumOfSquareAndCube
 } from './pkg/wasm_bindgen_demo.js';
 
 export function square(n) {
   return n * n;
 }
 
-export const cube = n => n ** 3;
+export function cube(n) {
+  return n ** 3;
+}
 
 async function run() {
   await init();
@@ -26,7 +28,7 @@ async function run() {
   const powers = getPowers(3); // a UIntArray
   console.log('powers =', powers);
 
-  //console.log('square + cube =', sumOfSquareAndCube(2));
+  console.log('square + cube =', sumOfSquareAndCube(2));
 }
 
 run();
