@@ -8,7 +8,7 @@ extern "C" {
     pub fn log(s: &str);
 }
 
-#[wasm_bindgen(module = "/index.js")]
+#[wasm_bindgen(raw_module = "/index.js")]
 extern "C" {
     fn cube(n: f64) -> f64;
 
@@ -47,5 +47,5 @@ pub fn get_powers(n: u32) -> Vec<u32> {
 
 #[wasm_bindgen(js_name = sumOfSquareAndCube)]
 pub fn sum_of_square_and_cube(n: f64) -> f64 {
-    square(n) * cube(n)
+    square(n) + cube(n)
 }
